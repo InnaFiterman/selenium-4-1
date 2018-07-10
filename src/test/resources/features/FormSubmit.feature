@@ -4,22 +4,29 @@ Feature: Form automation
 
   Scenario Outline: Form filling and submition
     Given user navigates to the app url
-    When user fills first name with value "<firstname>"
-    And user fills last name with value "<lastName>"
-#    And user fills date of birth
-#    And user fills gender
-#    And user fills email
-#    And user fills company
-#    And user fills password
-#    And user fills address
-#    And user submit form
-    Then form is submitted
+    Then user  fills first name with value "<firstname>"
+    Then  user fills last name with value "<lastName>"
+    Then  user fills gender this
+    Then  user fills date of birth with value "<01.04.1999>"
+    Then  user fills address
+    Then  user fills email with value "<test@yahoo.com>"
+    Then  user fills password with value "<durak13>"
+    Then  user fills company
+    Then  user fills Role
+    When user fills Job
+    When user fills CheckboxOne
+    When user fills CheckboxTwo
+    When user fills Comments
+    When user submit form
+    When user check form is submitted
+    When user reload page
 
     Examples:
-      | firstname | lastName  |
-      | Nick      | Jackson   |
-      | Sergii    | Opanasiuk |
-      | Benson    | Kamary    |
+      | firstname | lastName  |01.04.1999|test@yahoo.com|durak13|
+      | Ivan      | Ivanov    |02.11.2001|test2@gmail.com|durak12|
+      | Iryna     | Petrova   |03.07.1985|test3@gmail.com|durak11|
+      | Anya      | Titov     |04.05.2003|test4@gmail.com|durak10|
+
 
 
 
